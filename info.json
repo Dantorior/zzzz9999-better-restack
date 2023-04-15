@@ -1,0 +1,11 @@
+   {
+      "name": "aaa01-better-restack",
+      "version": "1.0.5",
+      "title": "Better ReStack",
+      "author": "ExexDiablo",
+      "dependencies": ["base >= 1.1.80"],
+      "description": "Better ReStack here! One setting to rule them all! More mod compatibility.",
+      "contact": "",
+      "homepage": "",
+      "factorio_version": "1.1"
+  }
