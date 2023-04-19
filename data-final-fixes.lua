@@ -2,7 +2,7 @@
 local newStackSize = settings.startup["all-items-stacks"].value
 
 -- Define the table of item types to update
-local itemTypes = {"item", "ammo", "capsule", "module", "tool", "repair-tool", "item-with-entity-data"}
+local itemTypes = {"item", "ammo", "capsule", "module", "tool", "repair-tool", "item-with-entity-data", "rail-planner", "rail-signal", "rail-chain-signal", "gun"}
 
 -- Loop through all items of each type and set their stack size
 for _, itemType in pairs(itemTypes) do

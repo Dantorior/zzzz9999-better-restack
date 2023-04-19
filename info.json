@@ -1,6 +1,6 @@
    {
       "name": "aaa01-better-restack",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "title": "Better ReStack",
       "author": "ExexDiablo",
       "dependencies": ["base >= 1.1.80"],

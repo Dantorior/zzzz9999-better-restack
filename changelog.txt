@@ -1,38 +1,57 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 19. 04. 2023
+
+  Changes:
+    - From now on, railway tracks, railway signals and weapons are also stacked correctly.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 15. 04. 2023
-  Major Feature:
-    - Release to mod portal.
+
+  Major Features:
     - Added locale for: af, ar, be, bg, ca, cs,  da, de, el, en, eo, es-ES, et, eu, fi, fil, fr, fy-NL, ga-IE, hu, id, it, jp, ka, kk, ko, lv, ms, nl, pl, pt-BR, pt-PT, ro, sk, sl, sv, th, tr, uk, vi, zh-CN, zh-TW.
+  Changes:
+    - Release to mod portal.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.5
 Date: 15. 04. 2023
-  Feature:
+
+  Changes:
     - Refactor code.
     - Works in multiplayer.
     - Successful test lunch all base and modded game stacks changed in multiplayer.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 15. 04. 2023
-  Features:
+
+  Changes:
     - Expand code.
     - Successful new test lunchs almost all base and modded game stacks changed.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 14. 04. 2023
-  Features:
+
+  Changes:
     - Main code added.
     - Successful test lunch almost all base game stacks changed.
     - Successful test lunch almost all modded game stacks changed.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 14. 04. 2023
-  Features:
+
+  Changes:
     - Working mod settings in game.
     - Second successful test lunch.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: 13. 04. 2023
-  Features:
+Date: 13. 04. 2023  
+
+  Changes:
     - Mod structure creation.
     - First successful test lunch.
