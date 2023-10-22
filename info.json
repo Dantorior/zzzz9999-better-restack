@@ -1,11 +1,16 @@
-   {
-      "name": "zzzz9999-better-restack",
-      "version": "1.0.7",
-      "title": "Better ReStack",
-      "author": "ExexDiablo",
-      "dependencies": ["base >= 1.1.80"],
-      "description": "Better ReStack here! One setting to rule them all! More mod compatibility.",
-      "contact": "https://discord.com/users/199513576493416448",
-      "homepage": "",
-      "factorio_version": "1.1"
-  }
+{
+	"name": "zzzz9999-better-restack",
+	"version": "1.1.8",
+	"title": "ReStack All",
+	"author": "ExexDiablo",
+	"factorio_version": "1.1",
+	"dependencies": [
+	"base >= 1.1.80",
+	"(?) 248k",
+	"(?) space-exploration",
+	"(?) Krastorio2",
+	"(?) IfNickel"
+	],
+	"description": "ReStack all of them here! One setting to rule them all! More mod compatibility.",
+	"contact": "https://discord.com/users/199513576493416448"
+}
