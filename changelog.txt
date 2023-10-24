@@ -1,11 +1,19 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
-Date: 22. 10. 2023
+Date: 24. 10. 2023
   Minor Features:
-    - "default_request_amount" has been added as a new setting in the game for all items types.
+    - "default_request_amount" has been added as a new setting in game for modified items types.
+    - Added setting to write dawn items types to be changed(defaults to all items types).
   Changes:
     - Space Exploration compatibility fix. (All items stack size except hard-coded rocket fuel are changeable)
     - Some hidden dependencies were added to ensure proper load order.
+  Locale:
+    - Updated locale for: af, ar, be, bg, ca, cs,  da, de, el, en, eo, es-ES, et, eu, fi, fil, fr,
+      fy-NL, ga-IE, hu, id, it, jp, ka, kk, ko, lv, ms, nl, pl, pt-BR, pt-PT, ro, sk, sl, sv, th, tr,
+      uk, vi, zh-CN, zh-TW.(google-translate,bing)
+  Info:
+    - New name "StackMaster" formerly known as "Better ReStack".
+    - Updated mod description and thumbnail.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 29. 04. 2023

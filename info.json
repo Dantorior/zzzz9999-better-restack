@@ -1,7 +1,7 @@
 {
 	"name": "zzzz9999-better-restack",
 	"version": "1.1.8",
-	"title": "ReStack All",
+	"title": "StackMaster",
 	"author": "ExexDiablo",
 	"factorio_version": "1.1",
 	"dependencies": [
@@ -11,6 +11,6 @@
 	"(?) Krastorio2",
 	"(?) IfNickel"
 	],
-	"description": "ReStack all of them here! One setting to rule them all! More mod compatibility.",
+	"description": "Mod aims to simplify and improve the experience of changing stacks in the game, while maximizing compatibility with other mods.",
 	"contact": "https://discord.com/users/199513576493416448"
 }
