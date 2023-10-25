@@ -3,7 +3,7 @@ Version: 1.1.8
 Date: 24. 10. 2023
   Minor Features:
     - "default_request_amount" has been added as a new setting in game for modified items types.
-    - Added setting to write dawn items types to be changed(defaults to all items types).
+    - Added setting to write down items types to be changed(defaults to all items types).
   Changes:
     - Space Exploration compatibility fix. (All items stack size except hard-coded rocket fuel are changeable)
     - Some hidden dependencies were added to ensure proper load order.
