@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.9
+Date: 25. 10. 2023
+  Changes:
+    - Fixed typos.
+    - More hidden dependencies were added to ensure proper load order.
+    - Now code checks flags before modifying items.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 24. 10. 2023
   Minor Features:
