@@ -20,7 +20,7 @@ data:extend({
 		name = "all-items-stacks-def-req",
 		order = "ac",
 		setting_type = "startup",
-		default_value = 500,
+		default_value = 200,
 		minimum_value = 0,
 		maximum_value = 10000,
 	},
@@ -38,7 +38,7 @@ data:extend({
 		name = "all-item-types",
 		order = "ae",
 		setting_type = "startup",
-		default_value = "item, ammo, capsule, module, tool, repair-tool, item-with-entity-data, rail-planner, rail-signal, rail-chain-signal, gun, space-platform-starter-pack",
+		default_value = "item, ammo, capsule, module, tool, repair-tool, item-with-entity-data, rail-planner, rail-signal, rail-chain-signal, gun",
 		allow_blank = true,
 	}
 })
