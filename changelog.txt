@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2. 11. 2024
+  Minor Features:
+    - New way to change all stack sizes in game simple toggle lets you multiply default stack sizes by your desired number from 1 up to 1000.(Thanks for suggestion to SapphicFail)
+  Changes:
+    - Changed descriptions and names of settings.
+    - Refactored code to facilitate changes of update.
+  Locale:
+    - Updated locale for: af, ar, be, bg, ca, cs, da, de, el, en, eo, es-ES, et, eu, fi, fil, fr,
+      fy-NL, ga-IE, hu, id, it, jp, ka, kk, ko, lv, ms, nl, pl, pt-BR, pt-PT, ro, sk, sl, sv, th, tr,
+      uk, vi, zh-CN, zh-TW.(google-translate,deepl)
+  Info:
+    - Updated thumbnail in game and on mod portal.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 23. 10. 2024
   Changes:
