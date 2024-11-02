@@ -5,9 +5,9 @@ data:extend({
 		order = "aa",
         setting_type = "startup",
         default_value = false,
-    },
+	},
 	{
-		type = "double-setting",
+		type = "int-setting",
 		name = "stack-size-multiplier",
 		order = "ab",
 		setting_type = "startup",
@@ -16,7 +16,7 @@ data:extend({
 		maximum_value = 1000,
     },
 	{
-		type = "double-setting",
+		type = "int-setting",
 		name = "all-items-stacks-def-req",
 		order = "ac",
 		setting_type = "startup",
@@ -39,6 +39,6 @@ data:extend({
 		order = "ae",
 		setting_type = "startup",
 		default_value = "item, ammo, capsule, module, tool, repair-tool, item-with-entity-data, rail-planner, rail-signal, rail-chain-signal, gun",
-		allow_blank = true,
+		allow_blank = true
 	}
 })

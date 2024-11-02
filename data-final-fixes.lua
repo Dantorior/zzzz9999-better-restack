@@ -23,40 +23,38 @@ function table.contains(table, element)
 	end
 	return false
 end
-
 -- Loop through items types and check flags
 for _, itemType in pairs(itemTypes) do
-	for _, item in pairs(data.raw[itemType]) do
-		local shouldChange = true
-		if item.flags then
-			for _, flag in ipairs(item.flags) do
-				if table.contains(possibleFlags, flag) then
-					if flag == "not-stackable" then
-						item.stack_size = 1
-						shouldChange = false
-						break
+	if data.raw[itemType] then
+		for _, item in pairs(data.raw[itemType]) do
+			local shouldChange = true
+			
+			if item.flags then
+				for _, flag in ipairs(item.flags) do
+					if table.contains(possibleFlags, flag) then
+						if flag == "not-stackable" then
+							item.stack_size = 1
+							shouldChange = false
+							break
+						end
 					end
 				end
 			end
-		end
-		if shouldChange then
-			-- If toggle true
-			if settings.startup["enable-stack-size-multiplier"].value then
-				if item.stack_size then
+			
+			if shouldChange and item.stack_size then
+				if settings.startup["enable-stack-size-multiplier"].value then
 					item.stack_size = item.stack_size * stackMultiplier
 					item.default_request_amount = newDefReqStackSize * stackMultiplier
-				end
-			-- If toggle false
-			else
-				if shouldChange then
+				else
 					item.stack_size = newStackSize
 					item.default_request_amount = newDefReqStackSize
 				end
 			end
 		end
+	else
+		log("Warning: itemType '" .. itemType .. "' does not exist in data.raw.")
 	end
 end
-
 -- SE
 if mods["space-exploration"] then
 	data.raw.item["rocket-fuel"].stack_size = 10

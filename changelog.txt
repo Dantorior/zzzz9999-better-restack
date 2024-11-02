@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2. 11. 2024
+  Changes:
+    - Refactored code further and put some safeguards for smother experience.
+  Info:
+    - [space-age] Working on compatibility with DLC and another mod for everyone to enjoy, so updates will slowdown again. Take care <3
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2. 11. 2024
   Minor Features:
