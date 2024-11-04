@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 4. 11. 2024
+  Minor Features:
+    - [space-age] Weight management is here!
+    - Another new way to change stack sizes is to just put the item name in settings instead or along side with itemTypes.(Thanks for inspiration to zannon34)
+	- Multiplay and rewrite stack sizes of your choice at the same time, which provides a new level of control for players.
+  Changes:
+    - A lot of new code.
+	- Several new mod settings.
+  Locale:
+    - Updated locale for: af, ar, be, bg, ca, cs, da, de, el, en, eo, es-ES, et, eu, fi, fil, fr,
+      fy-NL, ga-IE, hu, id, it, jp, ka, kk, ko, lv, ms, nl, pl, pt-BR, pt-PT, ro, sk, sl, sv, th, tr,
+      uk, vi, zh-CN, zh-TW.(google-translate,deepl)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 2. 11. 2024
   Changes:

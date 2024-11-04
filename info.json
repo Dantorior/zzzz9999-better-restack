@@ -1,11 +1,14 @@
 {
 	"name": "zzzz9999-better-restack",
-	"version": "1.2.1",
+	"version": "1.3.0",
 	"title": "StackMaster",
 	"author": "ExexDiablo",
 	"factorio_version": "2.0",
 	"dependencies": [
 	"base >= 1.1.80",
+	"(?) elevated-rails",
+	"(?) quality",
+	"(?) space-age",
 	"(?) 248k",
 	"(?) space-exploration",
 	"(?) Krastorio2",
