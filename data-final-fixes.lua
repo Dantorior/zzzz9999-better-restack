@@ -51,8 +51,12 @@ local function updateItemStackSize(item, useMultiplier, useNewStack)
 end
 
 local function updateItemWeight(item)
-	if item.weight then
-		item.weight = item.weight / settings.startup["sm-weight"].value
+    if item.weight then
+        log("Item: '" .. (item.name or "unknown") .. "' had weight: " .. item.weight)
+        item.weight = item.weight / settings.startup["sm-weight"].value
+        log("Item: '" .. (item.name or "unknown") .. "' now has weight: " .. item.weight)
+    else
+        log("Item: '" .. (item.name or "unknown") .. "' has no weight?")
     end
 end
 
@@ -61,9 +65,15 @@ if settings.startup["sm-enable-type"].value then
         if data.raw[itemType] then
             for _, item in pairs(data.raw[itemType]) do
                 local shouldChange = processItemFlags(item)
-                if shouldChange then
-                    updateItemStackSize(item, true, false)
-                end
+				if shouldChange then
+					if settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
+						updateItemStackSize(item, true, false)
+					elseif not settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value  then
+						updateItemStackSize(item, false, true)
+					elseif settings.startup["sm-enable-stack-size-multiplier"].value and settings.startup["sm-enable-rewrite"].value then
+						updateItemStackSize(item, true, false)
+					end
+				end
             end
         else
             log("Warning: item type '" .. itemType .. "' does not exist.")
@@ -90,15 +100,17 @@ if settings.startup["sm-enable-name"].value then
 		end
 	end
 end
+-- SA
 if mods["space-age"] then
 	local weightTypes = parseStringToTable(settings.startup["sm-weight-item-types"].value)
 	local weightNames = parseStringToTable(settings.startup["sm-weight-item-names"].value)
 	if settings.startup["sm-enable-weight"].value then
 		if settings.startup["sm-if-weight"].value then
 			for _, weightTypes in pairs(weightTypes) do
-				local weightOfType = data.raw[weightTypes]
-				if weightOfType then
-					updateItemWeight(weightOfType)
+				if data.raw[weightTypes] then
+					for _, item in pairs(data.raw[weightTypes]) do
+						updateItemWeight(item)
+					end
 				else
 					log("Warning: item type '" .. weightTypes .. "' does not exist.")
 				end
