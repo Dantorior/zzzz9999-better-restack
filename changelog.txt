@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.4
+Date: 18. 12. 2024
+  Changes:
+    - Introduced new function to prevent integer overflow, clamp()
+    - Code rewrite that gained ~0.03ms in base game + DLC load and potentially second in heavily modded games
+    - Removed redundant log()
+    - Items that has hidden property would not be affected
+  Bugfixes:
+    - Integer overflow due to huge default stack sizes in other mods reported by Ferro70 (https://mods.factorio.com/mod/zzzz9999-better-restack/discussion/675765736e47491de8effbaa)
+---------------------------------------------------------------------------------------------------
+Version: 1.3.3
+Date: 17. 11. 2024
+  Bugfixes:
+    - Regex typo, before in rare cases some names and types that had "s" in them were ignored
+    - Item Names now applied a bit more correctly
+---------------------------------------------------------------------------------------------------
 Version: 1.3.2
 Date: 7. 11. 2024
   Bugfixes:
@@ -16,7 +32,7 @@ Date: 4. 11. 2024
   Minor Features:
     - [space-age] Weight management is here!
     - Another new way to change stack sizes is to just put the item name in settings instead or along side with itemTypes.(Thanks for inspiration to zannon34)
-    - Multiplay and rewrite stack sizes of your choice at the same time, which provides a new level of control for players.
+    - Multiply and rewrite stack sizes of your choice at the same time, which provides a new level of control for players.
   Changes:
     - A lot of new code.
     - Several new mod settings.

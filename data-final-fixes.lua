@@ -1,12 +1,12 @@
 local stackMultiplier = settings.startup["sm-stack-size-multiplier"].value
 local newStackSize = settings.startup["sm-items-stacks"].value
 local newDefReqStackSize = settings.startup["sm-items-def-req"].value
-
+local GTypes = { "item", "ammo", "capsule", "module", "tool", "repair-tool", "item-with-entity-data", "rail-planner", "rail-signal", "rail-chain-signal", "gun"}
 local possibleFlags = { "draw-logistic-overlay", "hidden", "always-show", "hide-from-bonus-gui", "hide-from-fuel-tooltip", "not-stackable", "can-extend-inventory", "primary-place-result", "mod-openable", "only-in-cursor", "spawnable" }
 
 local function parseStringToTable(inputString)
 	local resultTable = {}
-	for item in inputString:gmatch("[^%s,]+") do
+	for item in inputString:gmatch("[a-z%-]+") do
 		table.insert(resultTable, item)
 	end
 	return resultTable
@@ -21,28 +21,59 @@ local function tableContains(tbl, element)
 	return false
 end
 
+local function clamp(value, min, max)
+    if value < min then
+        return min
+    elseif value > max then
+        return max
+    else
+        return value
+    end
+end
+
 local itemTypes = parseStringToTable(settings.startup["sm-item-types"].value)
 local itemNames = parseStringToTable(settings.startup["sm-item-names"].value)
 
-local function processItemFlags(item)
-    if item.flags then
-        for _, flag in ipairs(item.flags) do
-            if tableContains(possibleFlags, flag) then
-                if flag == "not-stackable" then
-                    item.stack_size = 1
-                    return false
+local function getItemsForUpdate(itemNames, GTypes)
+    local itemsToUpdate = {}
+    for _, itemType in ipairs(GTypes) do
+        local typeData = data.raw[itemType]
+        if typeData then
+            for _, itemName in ipairs(itemNames) do
+                local item = typeData[itemName]
+                if item then
+                    itemsToUpdate[#itemsToUpdate + 1] = item
                 end
             end
         end
     end
-    return true
+    return itemsToUpdate
+end
+
+local function processItemFlags(item)
+    if item.hidden then 
+		return false
+	elseif item == nil then
+		return false
+	elseif item.flags then
+		for _, flag in ipairs(item.flags) do
+			if tableContains(possibleFlags, flag) then
+				if flag == "not-stackable" then
+					item.stack_size = 1
+					return false
+				end
+			end
+		end
+	end
+	return true
 end
 
 local function updateItemStackSize(item, useMultiplier, useNewStack)
-    if item.stack_size then
+    if item == nil then end
+	if item.stack_size then
         if useMultiplier then
-            item.stack_size = item.stack_size * stackMultiplier
-            item.default_request_amount = newDefReqStackSize * stackMultiplier
+            item.stack_size = clamp((item.stack_size * stackMultiplier), 1, 4000000)
+            item.default_request_amount = clamp((newDefReqStackSize * stackMultiplier), 1, 4000000)
         elseif useNewStack then
             item.stack_size = newStackSize
             item.default_request_amount = newDefReqStackSize
@@ -52,9 +83,7 @@ end
 
 local function updateItemWeight(item)
     if item.weight then
-        log("Item: '" .. (item.name or "unknown") .. "' had weight: " .. item.weight)
         item.weight = item.weight / settings.startup["sm-weight"].value
-        log("Item: '" .. (item.name or "unknown") .. "' now has weight: " .. item.weight)
     else
         log("Item: '" .. (item.name or "unknown") .. "' has no weight?")
     end
@@ -65,38 +94,34 @@ if settings.startup["sm-enable-type"].value then
         if data.raw[itemType] then
             for _, item in pairs(data.raw[itemType]) do
                 local shouldChange = processItemFlags(item)
-				if shouldChange then
-					if settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
-						updateItemStackSize(item, true, false)
-					elseif not settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value  then
-						updateItemStackSize(item, false, true)
-					elseif settings.startup["sm-enable-stack-size-multiplier"].value and settings.startup["sm-enable-rewrite"].value then
-						updateItemStackSize(item, true, false)
-					end
-				end
+                if shouldChange then
+                    if settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
+                        updateItemStackSize(item, true, false)
+                    elseif not settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
+                        updateItemStackSize(item, false, true)
+                    elseif settings.startup["sm-enable-stack-size-multiplier"].value and settings.startup["sm-enable-rewrite"].value then
+                        updateItemStackSize(item, true, false)
+                    end
+                end
             end
         else
-            log("Warning: item type '" .. itemType .. "' does not exist.")
+            log("Warning type: '" .. itemType .. "' does not exist?")
         end
     end
 end
 
 if settings.startup["sm-enable-name"].value then
-	for _, itemName in pairs(itemNames) do
-		local item = data.raw["item"] and data.raw["item"][itemName]
-		if item then
-			local shouldChange = processItemFlags(item)
-			if shouldChange then
-				if settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
-					updateItemStackSize(item, true, false)
-				elseif not settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value  then
-					updateItemStackSize(item, false, true)
-				elseif settings.startup["sm-enable-stack-size-multiplier"].value and settings.startup["sm-enable-rewrite"].value then
-					updateItemStackSize(item, false, true)
-				end
+	local itemsToUpdate = getItemsForUpdate(itemNames, GTypes)
+	for _, item in ipairs(itemsToUpdate) do
+		local shouldChange = processItemFlags(item)
+		if shouldChange then
+			if settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
+				updateItemStackSize(item, true, false)
+			elseif not settings.startup["sm-enable-stack-size-multiplier"].value and not settings.startup["sm-enable-rewrite"].value then
+				updateItemStackSize(item, false, true)
+			elseif settings.startup["sm-enable-stack-size-multiplier"].value and settings.startup["sm-enable-rewrite"].value then
+				updateItemStackSize(item, false, true)
 			end
-		else
-			log("Warning: item name '" .. itemName .. "' does not exist.")
 		end
 	end
 end
@@ -112,16 +137,16 @@ if mods["space-age"] then
 						updateItemWeight(item)
 					end
 				else
-					log("Warning: item type '" .. weightTypes .. "' does not exist.")
+					log("Warning type: '" .. weightTypes .. "' does not exist?")
 				end
 			end
 		elseif not settings.startup["sm-if-weight"].value then
 			for _, weightNames in pairs(weightNames) do
-				local weightOfName = data.raw["item"] and data.raw["item"][weightNames]
-				if weightOfName then
-					updateItemWeight(weightOfName)
+				local item = data.raw["item"] and data.raw["item"][weightNames]
+				if item then
+					updateItemWeight(item)
 				else
-					log("Warning: item name '" .. weightNames .. "' does not exist.")
+					log("Warning name: '" .. weightNames .. "' does not exist?")
 				end
 			end
 		end

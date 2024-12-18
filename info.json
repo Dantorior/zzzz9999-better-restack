@@ -1,6 +1,6 @@
 {
 	"name": "zzzz9999-better-restack",
-	"version": "1.3.2",
+	"version": "1.3.4",
 	"title": "StackMaster",
 	"author": "ExexDiablo",
 	"factorio_version": "2.0",
@@ -45,6 +45,6 @@
     "(?) FactorioExtended-Plus-Weaponry",
     "(?) H2O"
 	],
-	"description": "Mod aims to simplify and improve the experience of changing stacks in the game, while maximizing compatibility with other mods.",
+	"description": "Powerful mod changes stacks in the game with ability to fine-tune experience. Since 1.3.0. able to change weight values of items.",
 	"contact": "https://discord.com/users/199513576493416448"
 }
