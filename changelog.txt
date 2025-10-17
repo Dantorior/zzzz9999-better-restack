@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.5
+Date: 17. 10. 2025
+  Changes:
+    - Updated mod info to support requested by HonkTm mod(https://mods.factorio.com/mod/zzzz9999-better-restack/discussion/68f26aa3ddf77946379165b9)
+  Locale:
+    - Updated locale for easier understanding: af, ar, be, bg, ca, cs, da, de, el, en, eo, es-ES, et, eu, fi, fil, fr, fy-NL, ga-IE, hu, id, it, jp, ka, kk, ko, lv, ms, nl, pl, pt-BR, pt-PT, ro, sk, sl, sv, th, tr, uk, vi, zh-CN, zh-TW.(google-translate, deepl)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.4
 Date: 18. 12. 2024
   Changes:

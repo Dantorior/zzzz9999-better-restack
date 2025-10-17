@@ -1,6 +1,6 @@
 {
 	"name": "zzzz9999-better-restack",
-	"version": "1.3.4",
+	"version": "1.3.5",
 	"title": "StackMaster",
 	"author": "ExexDiablo",
 	"factorio_version": "2.0",
@@ -10,6 +10,7 @@
 	"(?) quality",
 	"(?) space-age",
 	"(?) 248k",
+	"(?) exotic-space-industries-remembrance",
 	"(?) space-exploration",
 	"(?) Krastorio2",
 	"(?) bzgas",
@@ -45,6 +46,6 @@
     "(?) FactorioExtended-Plus-Weaponry",
     "(?) H2O"
 	],
-	"description": "Powerful mod changes stacks in the game with ability to fine-tune experience. Since 1.3.0. able to change weight values of items.",
+	"description": "Powerful mod changes stacks in the game with ability to fine-tune experience. Since 1.3.0. able to change weight values of items",
 	"contact": "https://discord.com/users/199513576493416448"
 }

@@ -1,0 +1,54 @@
+=== DeepL Translation Report ===
+Start time: 2025-10-17 23:09:00
+End time: 2025-10-17 23:09:16
+
+Unresolved Folders (no language match):
+  UNRESOLVED_FOLDER: 'af'
+  UNRESOLVED_FOLDER: 'be'
+  UNRESOLVED_FOLDER: 'ca'
+  UNRESOLVED_FOLDER: 'eo'
+  UNRESOLVED_FOLDER: 'eu'
+  UNRESOLVED_FOLDER: 'fy-NL'
+  UNRESOLVED_FOLDER: 'ga-IE'
+  UNRESOLVED_FOLDER: 'jp'
+  UNRESOLVED_FOLDER: 'ka'
+  UNRESOLVED_FOLDER: 'kk'
+  UNRESOLVED_FOLDER: 'ms'
+  UNRESOLVED_FOLDER: 'th'
+  UNRESOLVED_FOLDER: 'vi'
+
+Successfully Translated Files (28):
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\ar\settings.cfg [AR]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\bg\settings.cfg [BG]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\cs\settings.cfg [CS]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\da\settings.cfg [DA]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\de\settings.cfg [DE]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\el\settings.cfg [EL]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\es-ES\settings.cfg [ES]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\et\settings.cfg [ET]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\fi\settings.cfg [FI]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\fil\settings.cfg [FI]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\fr\settings.cfg [FR]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\hu\settings.cfg [HU]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\id\settings.cfg [ID]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\it\settings.cfg [IT]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\ko\settings.cfg [KO]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\lv\settings.cfg [LV]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\nl\settings.cfg [NL]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\pl\settings.cfg [PL]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\pt-BR\settings.cfg [PT-BR]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\pt-PT\settings.cfg [PT-PT]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\ro\settings.cfg [RO]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\sk\settings.cfg [SK]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\sl\settings.cfg [SL]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\sv\settings.cfg [SV]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\tr\settings.cfg [TR]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\uk\settings.cfg [UK]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\zh-CN\settings.cfg [ZH]
+  C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\zh-TW\settings.cfg [ZH]
+
+=== Summary ===
+ Unresolved folders: 13
+ Failed files/batches: 0
+ Translated files: 28
+ Report file: C:/Users/User/Documents/GitHub/zzzz9999-better-restack/locale\translation_report.txt
